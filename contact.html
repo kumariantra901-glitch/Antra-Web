@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start a Project | Antra-Web</title>
+  <meta name="description" content="Send a detailed project inquiry to Antra-Web, or reach out directly by email or WhatsApp. Available worldwide.">
+  <link rel="canonical" href="https://antra-web.example/contact.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Antra-Web">
+  <meta property="og:title" content="Start a Project | Antra-Web">
+  <meta property="og:description" content="Send a detailed project inquiry to Antra-Web, or reach out directly by email or WhatsApp. Available worldwide.">
+  <meta property="og:image" content="assets/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--
+    Contact-page-only polish. Scoped here (not in css/style.css) so nothing
+    on any other page is touched. Reuses the existing design tokens
+    (--accent, --paper-*, --ink-*, --radius-*, --font-*) — no new colors,
+    fonts or motion introduced.
+  -->
+  <style>
+    .contact-panel{
+      background:var(--paper-000);
+      border:1px solid var(--paper-line);
+      border-radius:var(--radius-l);
+      padding:30px 32px;
+    }
+    .contact-panel h3{margin-bottom:4px;}
+    .contact-panel .contact-info-card{margin-top:20px;}
+    .contact-info-row a{transition:color var(--dur-s) var(--ease);}
+    .contact-info-row a:hover{color:var(--accent);}
+
+    .inquiry-card{
+      background:var(--paper-000);
+      border:1px solid var(--paper-line);
+      border-radius:var(--radius-l);
+      padding:40px;
+      box-shadow:0 40px 90px -50px rgba(20,21,26,0.22);
+    }
+    .inquiry-card-head p{font-size:.92rem;color:var(--paper-ink-soft);margin-top:10px;line-height:1.6;}
+
+    .form-actions{display:flex;flex-direction:column;gap:14px;margin-top:30px;}
+    .form-or{
+      text-align:center;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--paper-ink-soft);
+    }
+
+    @media (max-width:640px){
+      .contact-panel{padding:24px 22px;}
+      .inquiry-card{padding:24px 20px;}
+    }
+  </style>
+</head>
+<body data-page="contact">
+  <header class="site-header" data-header>
+    <div class="wrap">
+      <a href="index.html" class="brand"><span class="brand-dot"></span>Antra-Web</a>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html" data-nav-link="home">Home</a>
+        <a href="about.html" data-nav-link="about">About</a>
+        <a href="services.html" data-nav-link="services">Services</a>
+        <a href="packages.html" data-nav-link="packages">Packages</a>
+        <a href="portfolio.html" data-nav-link="portfolio">Portfolio</a>
+        <a href="process.html" data-nav-link="process">Process</a>
+        <a href="faq.html" data-nav-link="faq">FAQ</a>
+        <a href="contact.html" data-nav-link="contact">Contact</a>
+      </nav>
+      <div class="nav-cta-wrap">
+        <a href="contact.html" class="btn btn-primary">Start a Project</a>
+        <button class="hamburger" data-hamburger aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" data-mobile-nav id="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      <div class="mobile-nav-top">
+        <a href="index.html" class="brand"><span class="brand-dot"></span>Antra-Web</a>
+        <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu">
+          <span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav-scroll" aria-label="Mobile">
+        <ul>
+          <li><a href="index.html" data-nav-link="home">Home</a></li>
+          <li><a href="about.html" data-nav-link="about">About</a></li>
+          <li><a href="services.html" data-nav-link="services">Services</a></li>
+          <li><a href="packages.html" data-nav-link="packages">Packages</a></li>
+          <li><a href="portfolio.html" data-nav-link="portfolio">Portfolio</a></li>
+          <li><a href="process.html" data-nav-link="process">Process</a></li>
+          <li><a href="faq.html" data-nav-link="faq">FAQ</a></li>
+          <li><a href="contact.html" data-nav-link="contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-foot">
+          <a href="contact.html" class="btn btn-primary btn-block">Start a Project</a>
+          <a href="#" data-whatsapp-link class="btn btn-ghost btn-block" style="color:#F2F1EE;border-color:var(--ink-line-strong)">Message on WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="section section--dark" style="padding-top:160px;padding-bottom:60px;">
+      <div class="wrap" data-reveal>
+        <span class="eyebrow">Start a Project</span>
+        <h1 style="margin:18px 0 16px;max-width:17ch;">Let's Build Something For Your Business.</h1>
+        <p class="lede">Tell me about your business, your goals and the website you have in mind. I'll reply personally with clear next steps — usually within a day.</p>
+        <div class="hero-ctas" style="margin-top:30px;">
+          <a href="#inquiry-form" class="btn btn-primary">Start an Inquiry</a>
+          <a href="#" data-whatsapp-link class="btn btn-ghost" style="color:#F2F1EE;border-color:var(--ink-line-strong)">Message on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="wrap">
+        <ul>
+          <li>Worldwide, Remote-Friendly</li>
+          <li>Personal, Direct Communication</li>
+          <li>Reply Within 24 Hours</li>
+          <li>Flexible Packages</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:80px;" id="inquiry-form">
+      <div class="wrap contact-layout">
+
+        <div data-reveal>
+          <span class="eyebrow">Why Work With Antra-Web</span>
+          <h2 style="margin:16px 0 18px;font-size:clamp(1.6rem,2.6vw,2.1rem);">A website built around your business, not a template.</h2>
+          <p class="body-text">The inquiry form on the right takes a couple of minutes and gives me enough detail to understand your project properly — no back-and-forth needed just to get started.</p>
+          <ul class="contact-intro-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Built around your business, not a generic template</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Clear communication from the first message</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Flexible packages for different budgets</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Available to work with businesses worldwide</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="contact-panel">
+            <h3>Direct Contact</h3>
+            <div class="contact-info-card">
+              <div class="contact-info-row">
+                <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></div>
+                <div><a href="#" data-email-link data-email-display style="font-weight:600;"></a></div>
+              </div>
+              <div class="contact-info-row">
+                <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
+                <div><a href="#" data-whatsapp-link data-whatsapp-display style="font-weight:600;"></a></div>
+              </div>
+              <div class="contact-info-row">
+                <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
+                <div><a href="#" data-instagram-link style="font-weight:600;">@antra_web</a></div>
+              </div>
+              <div class="contact-info-row">
+                <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></div>
+                <div><a href="#" data-facebook-link style="font-weight:600;">Antra Web</a></div>
+              </div>
+            </div>
+            <div style="margin-top:22px;"><span class="badge-worldwide">Available to work with businesses worldwide</span></div>
+          </div>
+        </div>
+
+        <div>
+        <div class="inquiry-card">
+          <div class="inquiry-card-head" data-reveal>
+            <span class="eyebrow">Project Inquiry</span>
+            <h3 style="margin-top:14px;">Tell me about your project.</h3>
+            <p>Fields marked * are required. Everything else just helps me prepare — skip anything you're not sure about yet.</p>
+          </div>
+
+          <form data-inquiry-form novalidate data-reveal style="margin-top:8px;">
+
+            <span class="form-section-title">Personal Information</span>
+            <div class="form-grid">
+              <div class="field">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required autocomplete="name">
+                <span class="field-error">Please enter your name.</span>
+              </div>
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+                <span class="field-error">Please enter a valid email address.</span>
+              </div>
+              <div class="field full">
+                <label for="phone">WhatsApp / Phone *</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                <span class="field-error">Please enter a valid phone number.</span>
+              </div>
+            </div>
+
+            <span class="form-section-title">Business Information</span>
+            <div class="form-grid">
+              <div class="field">
+                <label for="businessName">Business Name *</label>
+                <input type="text" id="businessName" name="businessName" required>
+                <span class="field-error">Please enter your business name.</span>
+              </div>
+              <div class="field">
+                <label for="businessType">Business Type *</label>
+                <select id="businessType" name="businessType" required>
+                  <option value="">Select one</option>
+                  <option>Restaurant / Cafe</option><option>Salon / Beauty</option><option>Fitness / Gym</option>
+                  <option>E-commerce</option><option>Professional Services</option><option>Home Services</option>
+                  <option>Creative Business</option><option>Personal Brand</option><option>Startup</option><option>Other</option>
+                </select>
+                <span class="field-error">Please select a business type.</span>
+              </div>
+            </div>
+
+            <span class="form-section-title">Project Information</span>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="projectType">What do you need? *</label>
+                <select id="projectType" name="projectType" required>
+                  <option value="">Select one</option>
+                  <option>New Website</option><option>Website Redesign</option><option>Landing Page</option>
+                  <option>Multi-page Business Website</option><option>Portfolio Website</option>
+                  <option>E-commerce Website</option><option>Not Sure Yet</option>
+                </select>
+                <span class="field-error">Please select what you need.</span>
+              </div>
+              <div class="field">
+                <label for="package">Package *</label>
+                <select id="package" name="package" required>
+                  <option value="">Select one</option>
+                  <option>Starter</option><option>Business</option><option>Premium</option>
+                  <option>Custom Project</option><option>Not Sure Yet</option>
+                </select>
+                <span class="field-error">Please select a package.</span>
+              </div>
+              <div class="field">
+                <label for="websiteSize">Website Size <span class="opt">(optional)</span></label>
+                <select id="websiteSize" name="websiteSize">
+                  <option value="">Select one</option>
+                  <option>1 Page</option><option>2–3 Pages</option><option>4–5 Pages</option>
+                  <option>6–10 Pages</option><option>Not Sure Yet</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label>Do you already have a website? *</label>
+                <div class="radio-row">
+                  <label class="radio-pill"><input type="radio" name="hasWebsite" value="Yes" required>Yes</label>
+                  <label class="radio-pill"><input type="radio" name="hasWebsite" value="No" required>No</label>
+                </div>
+                <span class="field-error">Please let me know if you have a website already.</span>
+              </div>
+              <div class="field full conditional" data-conditional="currentWebsite">
+                <label for="currentWebsite">Current Website URL</label>
+                <input type="text" id="currentWebsite" name="currentWebsite" placeholder="https://">
+              </div>
+
+              <div class="field">
+                <label for="budget">Budget Range <span class="opt">(optional)</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Select one</option>
+                  <option>Under $150</option><option>$150–$300</option><option>$300–$500</option>
+                  <option>$500–$750</option><option>$750+</option><option>Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="timeline">Timeline <span class="opt">(optional)</span></label>
+                <select id="timeline" name="timeline">
+                  <option value="">Select one</option>
+                  <option>ASAP</option><option>1–2 Weeks</option><option>2–4 Weeks</option>
+                  <option>1–2 Months</option><option>Flexible</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="details">Tell me about your business and what you'd like your website to do. *</label>
+                <textarea id="details" name="details" required placeholder="Tell me about your business, your preferred style, required pages/features, and anything else you'd like me to know..."></textarea>
+                <span class="field-error">Please share a few details about your project.</span>
+              </div>
+              <div class="checkbox-field">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">I agree to be contacted about this project.</label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-block" data-form-submit>Send Project Inquiry</button>
+              <span class="form-or">or</span>
+              <button type="button" class="btn btn-ghost btn-block wa-inquiry-btn" data-whatsapp-inquiry>Send Inquiry via WhatsApp</button>
+            </div>
+            <div class="form-status" data-form-status></div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="wrap">
+        <div class="cta-banner" data-reveal>
+          <div class="grain"></div>
+          <span class="eyebrow" style="justify-content:center">Not Sure What You Need?</span>
+          <h2>That's completely okay.</h2>
+          <p class="lede" style="margin-left:auto;margin-right:auto;">Tell me about your business and what you're trying to achieve. We can figure out the right website and package together.</p>
+          <div class="cta-actions">
+            <a href="#inquiry-form" class="btn btn-primary">Start Your Project →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand"><span class="brand-dot"></span>Antra-Web</a>
+          <p class="footer-tagline">Modern websites and digital experiences for businesses worldwide.</p>
+          <div class="footer-social">
+            <a href="#" data-instagram-link class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a href="#" data-facebook-link class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#" data-email-link data-email-display></a></li>
+            <li><a href="#" data-whatsapp-link data-whatsapp-display></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Availability</h4>
+          <ul>
+            <li><span class="badge-worldwide">Available worldwide</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year></span> Antra-Web. All rights reserved.</span>
+        <span>Designed &amp; built by Antra-Web.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" data-whatsapp-link class="wa-float" aria-label="Message on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.664 4.615 1.818 6.516L4 29l7.671-1.767A11.94 11.94 0 0016.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3zm6.964 17.09c-.29.816-1.44 1.5-2.36 1.694-.628.132-1.448.237-4.207-.902-3.53-1.462-5.804-5.04-5.98-5.276-.17-.235-1.428-1.9-1.428-3.625s.897-2.573 1.216-2.926c.29-.32.632-.4.843-.4.21 0 .422.002.607.011.194.01.454-.074.71.542.29.7.986 2.425 1.072 2.6.086.176.144.38.03.616-.115.235-.172.38-.343.586-.17.206-.36.46-.514.618-.172.176-.35.367-.15.72.2.353.887 1.463 1.903 2.37 1.308 1.167 2.41 1.53 2.764 1.7.353.176.56.147.766-.088.206-.235.883-1.03 1.117-1.383.235-.353.47-.294.79-.176.32.117 2.03.958 2.378 1.13.348.177.58.265.667.412.087.147.087.85-.202 1.665z"/></svg>
+  </a>
+
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
